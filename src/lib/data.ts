@@ -1,6 +1,15 @@
 import { colors } from "./colors";
 
-export const playlists = [
+export interface Playlist {
+  id: string;
+  albumId: number;
+  title: string;
+  color: (typeof colors)[keyof typeof colors];
+  cover: string;
+  artists: string[];
+}
+
+export const playlists: Playlist[] = [
   {
     id: '1',
     albumId: 1,
@@ -73,9 +82,17 @@ export const allPlaylists = [
   ...sidebarPlaylists,
 ]
 
+export interface Song {
+  id: number;
+  albumId: number;
+  title: string;
+  image: string;
+  artists: string[];
+  album: string;
+  duration: string;
+}
 
-
-export const songs = [
+export const songs: Song[] = [
   {
     "id": 1,
     "albumId": 1,
